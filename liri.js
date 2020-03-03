@@ -48,7 +48,7 @@ var getSpotify = function (songName) {
 };
 
 var getBands = function (artist) {
-    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=9c42d4dc9c1397201a4e3dc4d0bb840";
+    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=3c899c8648721652ad892222f1449bca";
         axios.get(queryURL).then(
             function (response) {
                 var jsonData = response.data;
