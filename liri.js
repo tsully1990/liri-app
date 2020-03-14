@@ -1,23 +1,16 @@
 require("dotenv").config();
-
 var Spotify = require("node-spotify-api");
-
 var keys = require("./keys");
-
 var axios = require("axios");
-
 var moment = require("moment");
-
 var fs = require("fs");
-
 var spotify = new Spotify(keys.spotify);
 
-//function that gets the artist name
 var getArtistNames = function (artist) {
     return artist.name;
 };
 
-//function to run spotify searches
+
 var getSpotify = function (songName) {
     if (songName === undefined) {
         songName = "why you do dat?";
@@ -79,7 +72,6 @@ var getBands = function (artist) {
 
 };
 
-//function for the movie search//
 var getMovie = function (movieName) {
     if (movieName === undefined) {
         movieName = "how high";
@@ -103,7 +95,6 @@ var getMovie = function (movieName) {
     );
 };
 
-//function for running command based from text files
 var doTheText = function () {
     fs.readFile("random.txt", "utf8", function(error, data) {
         console.log(data);
@@ -138,10 +129,8 @@ var pick = function (caseData, functionData) {
     }
 };
 
-// Function which takes in command line argument and executes proper function
 var runThis = function (argOne, argTwo) {
     pick(argOne, argTwo);
 };
 
-//Main Process//
 runThis(process.argv[2], process.argv.slice(3).join(" "));
